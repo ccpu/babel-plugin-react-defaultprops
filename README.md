@@ -1,0 +1,1 @@
+# babel-react-defaultProps-extractor

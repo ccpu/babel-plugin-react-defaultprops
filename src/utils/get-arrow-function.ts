@@ -24,4 +24,5 @@ export const getArrowFunction = (
       }
     }
   }
+  return undefined;
 };

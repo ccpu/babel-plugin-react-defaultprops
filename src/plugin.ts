@@ -114,6 +114,8 @@ export default function (): PluginObj<PluginPass & { opts: PluginOptions }> {
 
               const funcNode = getArrowFunction(init);
 
+              if (!funcNode) return;
+
               const params = getProps(funcNode);
 
               currentItem = {

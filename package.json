@@ -1,6 +1,6 @@
 {
   "name": "babel-react-defaultprops-extractor",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "A plugin to extract es6 default parameters",
   "source": "src/plugin.ts",
   "main": "lib/plugin.js",

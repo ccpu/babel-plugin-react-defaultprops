@@ -77,14 +77,13 @@ export default function (): PluginObj<PluginPass & { opts: PluginOptions }> {
                 };
               } else {
                 const props = getPropsFormBody(node);
-                if (props) {
-                  currentItem = {
-                    componentName,
-                    node,
-                    path,
-                    props,
-                  };
-                }
+
+                currentItem = {
+                  componentName,
+                  node,
+                  path,
+                  props: props || [],
+                };
               }
             },
             // `const Foo = (props: Props) => {};`
@@ -137,12 +136,14 @@ export default function (): PluginObj<PluginPass & { opts: PluginOptions }> {
                     t.identifier('__defaultProps'),
                   ),
                   t.objectExpression(
-                    item.props.map((prop) => {
-                      return t.objectProperty(
-                        prop.left as t.Identifier,
-                        prop.right,
-                      );
-                    }),
+                    item.props && item.props.length
+                      ? item.props.map((prop) => {
+                          return t.objectProperty(
+                            prop.left as t.Identifier,
+                            prop.right,
+                          );
+                        })
+                      : [],
                   ),
                 ),
               ),

@@ -7,6 +7,17 @@ export const getArrowFunction = (
     return node;
   }
 
+  if (t.isIdentifier(node.callee)) {
+    if (node.callee.name === 'forwardRef' || node.callee.name === 'memo') {
+      const func = node.arguments[0];
+      if (t.isArrowFunctionExpression(func)) {
+        return func;
+      } else if (t.isCallExpression(func)) {
+        return getArrowFunction(func);
+      }
+    }
+  }
+
   if (
     t.isMemberExpression(node.callee) &&
     t.isIdentifier(node.callee.object) &&

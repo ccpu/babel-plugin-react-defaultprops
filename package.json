@@ -1,7 +1,7 @@
 {
   "name": "babel-react-defaultprops-extractor",
-  "version": "1.0.0",
-  "description": "Starter to create babel plugin in typescript",
+  "version": "1.0.1",
+  "description": "A plugin to extract es6 default parameters",
   "source": "src/plugin.ts",
   "main": "lib/plugin.js",
   "module": "lib/plugin.module.js",
@@ -14,7 +14,8 @@
     "url": ""
   },
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "devDependencies": {
     "@babel/core": "^7.11.6",

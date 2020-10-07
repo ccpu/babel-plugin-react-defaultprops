@@ -5,7 +5,7 @@ import { transform } from './utils';
 const manualTestFixturesPath = path.resolve('__tests__/fixtures/manual');
 
 describe('should pass fixtures', () => {
-  const files = glob.sync('./fixtures/**/*.{ts,tsx}', {
+  const files = glob.sync('./fixtures/**/*.{ts,tsx,js,jsx}', {
     cwd: __dirname,
     dot: false,
   });
@@ -24,7 +24,7 @@ describe('should pass fixtures', () => {
       '__tests__',
       '__snapshots__',
       parsedFile.dir,
-      parsedFile.name + '.shot',
+      parsedFile.name + parsedFile.ext + '.shot',
     );
 
     it(`transforms ${parsedFile.dir}/${parsedFile.base}`, () => {

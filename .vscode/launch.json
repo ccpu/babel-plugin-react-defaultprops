@@ -7,14 +7,29 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Jest",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "--config",
+        "jest.debug.config.js"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": [
-        // "--runTestsByPath",
-        // "${workspaceFolder}/__tests__/fixtures.test.ts",
+        "--runTestsByPath",
+        "${relativeFile}",
         "--config",
         "jest.debug.config.js"
-        // "--no-cache"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",

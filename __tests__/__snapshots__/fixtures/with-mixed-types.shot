@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should pass fixtures transforms ./fixtures/with-mixed-types.tsx 1`] = `
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports.FunctionComponent = FunctionComponent;
+exports.MemoForwardRefComponent = exports.ForwardRefComponent = exports.MemoComponent = exports.VariableComponent = void 0;
+
+var _react = _interopRequireDefault(require('react'));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function FunctionComponent(props) {
+  var _props$str = props.str,
+      str = _props$str === void 0 ? 'string' : _props$str,
+      _props$num = props.num,
+      num = _props$num === void 0 ? 1 : _props$num,
+      _props$bool = props.bool,
+      bool = _props$bool === void 0 ? true : _props$bool,
+      _props$arr = props.arr,
+      arr = _props$arr === void 0 ? ['item-1'] : _props$arr,
+      _props$arrObj = props.arrObj,
+      arrObj = _props$arrObj === void 0 ? [{
+    bar: 'bar-val'
+  }] : _props$arrObj,
+      _props$obj = props.obj,
+      obj = _props$obj === void 0 ? {
+    foo: 'foo-val'
+  } : _props$obj,
+      _props$foo = props.foo,
+      foo = _props$foo === void 0 ? 'func' : _props$foo,
+      _props$bar = props.bar,
+      test = _props$bar === void 0 ? 'bar-2' : _props$bar,
+      prop = props.prop;
+  return _react['default'].createElement('div', null, foo + test);
+}
+
+FunctionComponent.__defaultProps = {
+  str: 'string',
+  num: 1,
+  bool: true,
+  arr: ['item-1'],
+  arrObj: [{
+    bar: 'bar-val'
+  }],
+  obj: {
+    foo: 'foo-val'
+  },
+  foo: 'func',
+  bar: 'bar-2'
+};
+
+var VariableComponent = function VariableComponent(props) {
+  var _props$str2 = props.str,
+      str = _props$str2 === void 0 ? 'string' : _props$str2,
+      _props$num2 = props.num,
+      num = _props$num2 === void 0 ? 1 : _props$num2,
+      _props$bool2 = props.bool,
+      bool = _props$bool2 === void 0 ? true : _props$bool2,
+      _props$arr2 = props.arr,
+      arr = _props$arr2 === void 0 ? ['item-1'] : _props$arr2,
+      _props$arrObj2 = props.arrObj,
+      arrObj = _props$arrObj2 === void 0 ? [{
+    bar: 'bar-val'
+  }] : _props$arrObj2,
+      _props$obj2 = props.obj,
+      obj = _props$obj2 === void 0 ? {
+    foo: 'foo-val'
+  } : _props$obj2,
+      _props$foo2 = props.foo,
+      foo = _props$foo2 === void 0 ? 'func' : _props$foo2,
+      _props$bar2 = props.bar,
+      test = _props$bar2 === void 0 ? 'bar-2' : _props$bar2,
+      prop = props.prop;
+  return _react['default'].createElement('div', null, foo + test);
+};
+
+exports.VariableComponent = VariableComponent;
+VariableComponent.__defaultProps = {
+  str: 'string',
+  num: 1,
+  bool: true,
+  arr: ['item-1'],
+  arrObj: [{
+    bar: 'bar-val'
+  }],
+  obj: {
+    foo: 'foo-val'
+  },
+  foo: 'func',
+  bar: 'bar-2'
+};
+
+var MemoComponent = _react['default'].memo(function (props) {
+  var _props$str3 = props.str,
+      str = _props$str3 === void 0 ? 'string' : _props$str3,
+      _props$num3 = props.num,
+      num = _props$num3 === void 0 ? 1 : _props$num3,
+      _props$bool3 = props.bool,
+      bool = _props$bool3 === void 0 ? true : _props$bool3,
+      _props$arr3 = props.arr,
+      arr = _props$arr3 === void 0 ? ['item-1'] : _props$arr3,
+      _props$arrObj3 = props.arrObj,
+      arrObj = _props$arrObj3 === void 0 ? [{
+    bar: 'bar-val'
+  }] : _props$arrObj3,
+      _props$obj3 = props.obj,
+      obj = _props$obj3 === void 0 ? {
+    foo: 'foo-val'
+  } : _props$obj3,
+      _props$foo3 = props.foo,
+      foo = _props$foo3 === void 0 ? 'func' : _props$foo3,
+      _props$bar3 = props.bar,
+      test = _props$bar3 === void 0 ? 'bar-2' : _props$bar3,
+      prop = props.prop;
+  return _react['default'].createElement('div', null, foo + test);
+});
+
+exports.MemoComponent = MemoComponent;
+MemoComponent.__defaultProps = {
+  str: 'string',
+  num: 1,
+  bool: true,
+  arr: ['item-1'],
+  arrObj: [{
+    bar: 'bar-val'
+  }],
+  obj: {
+    foo: 'foo-val'
+  },
+  foo: 'func',
+  bar: 'bar-2'
+};
+
+var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
+  var _props$str4 = props.str,
+      str = _props$str4 === void 0 ? 'string' : _props$str4,
+      _props$num4 = props.num,
+      num = _props$num4 === void 0 ? 1 : _props$num4,
+      _props$bool4 = props.bool,
+      bool = _props$bool4 === void 0 ? true : _props$bool4,
+      _props$arr4 = props.arr,
+      arr = _props$arr4 === void 0 ? ['item-1'] : _props$arr4,
+      _props$arrObj4 = props.arrObj,
+      arrObj = _props$arrObj4 === void 0 ? [{
+    bar: 'bar-val'
+  }] : _props$arrObj4,
+      _props$obj4 = props.obj,
+      obj = _props$obj4 === void 0 ? {
+    foo: 'foo-val'
+  } : _props$obj4,
+      _props$foo4 = props.foo,
+      foo = _props$foo4 === void 0 ? 'func' : _props$foo4,
+      _props$bar4 = props.bar,
+      test = _props$bar4 === void 0 ? 'bar-2' : _props$bar4,
+      prop = props.prop;
+  return _react['default'].createElement('div', {
+    ref: ref
+  }, foo + test);
+});
+
+exports.ForwardRefComponent = ForwardRefComponent;
+ForwardRefComponent.__defaultProps = {
+  str: 'string',
+  num: 1,
+  bool: true,
+  arr: ['item-1'],
+  arrObj: [{
+    bar: 'bar-val'
+  }],
+  obj: {
+    foo: 'foo-val'
+  },
+  foo: 'func',
+  bar: 'bar-2'
+};
+
+var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (props, ref) {
+  var _props$str5 = props.str,
+      str = _props$str5 === void 0 ? 'string' : _props$str5,
+      _props$num5 = props.num,
+      num = _props$num5 === void 0 ? 1 : _props$num5,
+      _props$bool5 = props.bool,
+      bool = _props$bool5 === void 0 ? true : _props$bool5,
+      _props$arr5 = props.arr,
+      arr = _props$arr5 === void 0 ? ['item-1'] : _props$arr5,
+      _props$arrObj5 = props.arrObj,
+      arrObj = _props$arrObj5 === void 0 ? [{
+    bar: 'bar-val'
+  }] : _props$arrObj5,
+      _props$obj5 = props.obj,
+      obj = _props$obj5 === void 0 ? {
+    foo: 'foo-val'
+  } : _props$obj5,
+      _props$foo5 = props.foo,
+      foo = _props$foo5 === void 0 ? 'func' : _props$foo5,
+      _props$bar5 = props.bar,
+      test = _props$bar5 === void 0 ? 'bar-2' : _props$bar5,
+      prop = props.prop;
+  return _react['default'].createElement('div', {
+    ref: ref
+  }, foo + test);
+}));
+
+exports.MemoForwardRefComponent = MemoForwardRefComponent;
+MemoForwardRefComponent.__defaultProps = {
+  str: 'string',
+  num: 1,
+  bool: true,
+  arr: ['item-1'],
+  arrObj: [{
+    bar: 'bar-val'
+  }],
+  obj: {
+    foo: 'foo-val'
+  },
+  foo: 'func',
+  bar: 'bar-2'
+};"
+`;

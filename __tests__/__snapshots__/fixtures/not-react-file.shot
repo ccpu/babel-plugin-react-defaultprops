@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should pass fixtures transforms ./fixtures/not-react-file.ts 1`] = `
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports.FunctionComponent = FunctionComponent;
+
+function FunctionComponent(props) {
+  var bar = props.bar,
+      _props$foo = props.foo,
+      foo = _props$foo === void 0 ? 'func' : _props$foo;
+  return bar + foo;
+}"
+`;

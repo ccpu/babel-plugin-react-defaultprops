@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should pass fixtures transforms ./fixtures/with-default-parameters-alias.tsx 1`] = `
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports.FunctionComponent = FunctionComponent;
+exports.MemoForwardRefComponent = exports.ForwardRefComponent = exports.MemoComponent = exports.VariableComponent = void 0;
+
+var _react = _interopRequireDefault(require('react'));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function FunctionComponent(_ref) {
+  var _ref$foo = _ref.foo,
+      foo = _ref$foo === void 0 ? 'func' : _ref$foo,
+      _ref$bar = _ref.bar,
+      test = _ref$bar === void 0 ? 'bar-2' : _ref$bar;
+  return _react['default'].createElement('div', null, foo + test);
+}
+
+FunctionComponent.__defaultProps = {
+  foo: 'func',
+  bar: 'bar-2'
+};
+
+var VariableComponent = function VariableComponent(_ref2) {
+  var _ref2$foo = _ref2.foo,
+      foo = _ref2$foo === void 0 ? 'func' : _ref2$foo,
+      _ref2$bar = _ref2.bar,
+      test = _ref2$bar === void 0 ? 'bar-2' : _ref2$bar;
+  return _react['default'].createElement('div', null, foo + test);
+};
+
+exports.VariableComponent = VariableComponent;
+VariableComponent.__defaultProps = {
+  foo: 'func',
+  bar: 'bar-2'
+};
+
+var MemoComponent = _react['default'].memo(function (_ref3) {
+  var _ref3$foo = _ref3.foo,
+      foo = _ref3$foo === void 0 ? 'func' : _ref3$foo,
+      _ref3$bar = _ref3.bar,
+      test = _ref3$bar === void 0 ? 'bar-2' : _ref3$bar;
+  return _react['default'].createElement('div', null, foo + test);
+});
+
+exports.MemoComponent = MemoComponent;
+MemoComponent.__defaultProps = {
+  foo: 'func',
+  bar: 'bar-2'
+};
+
+var ForwardRefComponent = _react['default'].forwardRef(function (_ref4, ref) {
+  var _ref4$foo = _ref4.foo,
+      foo = _ref4$foo === void 0 ? 'func' : _ref4$foo,
+      _ref4$bar = _ref4.bar,
+      test = _ref4$bar === void 0 ? 'bar-2' : _ref4$bar;
+  return _react['default'].createElement('div', {
+    ref: ref
+  }, foo + test);
+});
+
+exports.ForwardRefComponent = ForwardRefComponent;
+ForwardRefComponent.__defaultProps = {
+  foo: 'func',
+  bar: 'bar-2'
+};
+
+var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (_ref5, ref) {
+  var _ref5$foo = _ref5.foo,
+      foo = _ref5$foo === void 0 ? 'func' : _ref5$foo,
+      _ref5$bar = _ref5.bar,
+      test = _ref5$bar === void 0 ? 'bar-2' : _ref5$bar;
+  return _react['default'].createElement('div', {
+    ref: ref
+  }, foo + test);
+}));
+
+exports.MemoForwardRefComponent = MemoForwardRefComponent;
+MemoForwardRefComponent.__defaultProps = {
+  foo: 'func',
+  bar: 'bar-2'
+};"
+`;

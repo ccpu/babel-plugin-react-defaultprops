@@ -27,11 +27,6 @@ export function transform(
       },
       plugins: [[plugin, pluginOptions]],
       ...transformOptions,
-      presets: [
-        '@babel/preset-env',
-        '@babel/preset-react',
-        '@babel/preset-typescript',
-      ],
     }).code || ''
   );
 }

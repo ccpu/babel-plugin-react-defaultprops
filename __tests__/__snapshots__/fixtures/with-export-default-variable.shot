@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should pass fixtures transforms ./fixtures/with-export-default-variable.tsx 1`] = `
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports['default'] = void 0;
+
+var _react = _interopRequireDefault(require('react'));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var VariableComponent = function VariableComponent(_ref) {
+  var bar = _ref.bar,
+      _ref$foo = _ref.foo,
+      foo = _ref$foo === void 0 ? 'variable' : _ref$foo;
+  return _react['default'].createElement('div', null, bar + foo);
+};
+
+VariableComponent.__defaultProps = {
+  foo: 'variable'
+};
+var _default = VariableComponent;
+exports['default'] = _default;"
+`;

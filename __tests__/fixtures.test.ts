@@ -35,6 +35,7 @@ describe('should pass fixtures', () => {
           value: 'foo',
         },
         {
+          plugins: ['@babel/plugin-proposal-class-properties'],
           presets: [
             '@babel/preset-env',
             '@babel/preset-react',

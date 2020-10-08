@@ -83,12 +83,6 @@ declare module 'react' {
   export interface FunctionComponent<P = unknown> {
     __defaultProps?: Partial<P>;
   }
-  export interface ComponentClass {
-    __defaultProps?: Partial<P>;
-  }
-  export interface ForwardRefExoticComponent {
-    __defaultProps?: Partial<P>;
-  }
 }
 export {};
 ```

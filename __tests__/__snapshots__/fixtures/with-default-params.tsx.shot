@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should pass fixtures transforms ./fixtures/with-default-parameters-call-expression.tsx 1`] = `
+exports[`should pass fixtures transforms ./fixtures/with-default-params.tsx 1`] = `
 "\\"use strict\\";
-
-function _typeof(obj) { \\"@babel/helpers - typeof\\"; if (typeof Symbol === \\"function\\" && typeof Symbol.iterator === \\"symbol\\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \\"function\\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \\"symbol\\" : typeof obj; }; } return _typeof(obj); }
 
 Object.defineProperty(exports, \\"__esModule\\", {
   value: true
@@ -11,11 +9,9 @@ Object.defineProperty(exports, \\"__esModule\\", {
 exports.FunctionComponent = FunctionComponent;
 exports.MemoForwardRefComponent = exports.ForwardRefComponent = exports.MemoComponent = exports.VariableComponent2 = void 0;
 
-var _react = _interopRequireWildcard(require('react'));
+var _react = _interopRequireDefault(require('react'));
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== \\"function\\") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== \\"object\\" && typeof obj !== \\"function\\") { return { 'default': obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj['default'] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function FunctionComponent(_ref) {
   var bar = _ref.bar,
@@ -39,27 +35,32 @@ exports.VariableComponent2 = VariableComponent2;
 VariableComponent2.__defaultProps = {
   foo: 'variable'
 };
-var MemoComponent = (0, _react.memo)(function (_ref3) {
+
+var MemoComponent = _react['default'].memo(function (_ref3) {
   var bar = _ref3.bar,
       _ref3$foo = _ref3.foo,
       foo = _ref3$foo === void 0 ? 'memo' : _ref3$foo;
   return _react['default'].createElement(_react['default'].Fragment, null, bar + foo);
 });
+
 exports.MemoComponent = MemoComponent;
 MemoComponent.__defaultProps = {
   foo: 'memo'
 };
-var ForwardRefComponent = (0, _react.forwardRef)(function (_ref4) {
+
+var ForwardRefComponent = _react['default'].forwardRef(function (_ref4) {
   var bar = _ref4.bar,
       _ref4$foo = _ref4.foo,
       foo = _ref4$foo === void 0 ? 'forwardRef' : _ref4$foo;
   return _react['default'].createElement(_react['default'].Fragment, null, bar + foo);
 });
+
 exports.ForwardRefComponent = ForwardRefComponent;
 ForwardRefComponent.__defaultProps = {
   foo: 'forwardRef'
 };
-var MemoForwardRefComponent = (0, _react.memo)((0, _react.forwardRef)(function (_ref5, ref) {
+
+var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (_ref5, ref) {
   var bar = _ref5.bar,
       _ref5$foo = _ref5.foo,
       foo = _ref5$foo === void 0 ? 'memo-forwardRef' : _ref5$foo;
@@ -67,6 +68,7 @@ var MemoForwardRefComponent = (0, _react.memo)((0, _react.forwardRef)(function (
     ref: ref
   }, bar + foo);
 }));
+
 exports.MemoForwardRefComponent = MemoForwardRefComponent;
 MemoForwardRefComponent.__defaultProps = {
   foo: 'memo-forwardRef'

@@ -48,7 +48,7 @@ describe('should pass fixtures', () => {
 
   it('should pass empty file', () => {
     const result = transform(
-      path.join(manualTestFixturesPath, 'empty-file.ts'),
+      path.join(manualTestFixturesPath, 'empty-file.tsx'),
       {},
       {
         presets: [

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should pass fixtures transforms ./fixtures/with-default-parameters-alias.tsx 1`] = `
+exports[`should pass fixtures transforms ./fixtures/with-default-params-alias.tsx 1`] = `
 "\\"use strict\\";
 
 Object.defineProperty(exports, \\"__esModule\\", {

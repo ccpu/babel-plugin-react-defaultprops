@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should pass fixtures transforms ./fixtures/with-mixed-types.tsx 1`] = `
+exports[`should pass fixtures transforms ./fixtures/with-mixed-type-body-props.tsx 1`] = `
 "\\"use strict\\";
 
 Object.defineProperty(exports, \\"__esModule\\", {
@@ -14,6 +14,20 @@ var _react = _interopRequireDefault(require('react'));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function FunctionComponent(props) {
+  FunctionComponent.__defaultProps = {
+    str: 'string',
+    num: 1,
+    bool: true,
+    arr: ['item-1'],
+    arrObj: [{
+      bar: 'bar-val'
+    }],
+    obj: {
+      foo: 'foo-val'
+    },
+    foo: 'func',
+    bar: 'bar-2'
+  };
   var _props$str = props.str,
       str = _props$str === void 0 ? 'string' : _props$str,
       _props$num = props.num,
@@ -38,22 +52,21 @@ function FunctionComponent(props) {
   return _react['default'].createElement('div', null, foo + test);
 }
 
-FunctionComponent.__defaultProps = {
-  str: 'string',
-  num: 1,
-  bool: true,
-  arr: ['item-1'],
-  arrObj: [{
-    bar: 'bar-val'
-  }],
-  obj: {
-    foo: 'foo-val'
-  },
-  foo: 'func',
-  bar: 'bar-2'
-};
-
 var VariableComponent = function VariableComponent(props) {
+  VariableComponent.__defaultProps = {
+    str: 'string',
+    num: 1,
+    bool: true,
+    arr: ['item-1'],
+    arrObj: [{
+      bar: 'bar-val'
+    }],
+    obj: {
+      foo: 'foo-val'
+    },
+    foo: 'func',
+    bar: 'bar-2'
+  };
   var _props$str2 = props.str,
       str = _props$str2 === void 0 ? 'string' : _props$str2,
       _props$num2 = props.num,
@@ -79,22 +92,22 @@ var VariableComponent = function VariableComponent(props) {
 };
 
 exports.VariableComponent = VariableComponent;
-VariableComponent.__defaultProps = {
-  str: 'string',
-  num: 1,
-  bool: true,
-  arr: ['item-1'],
-  arrObj: [{
-    bar: 'bar-val'
-  }],
-  obj: {
-    foo: 'foo-val'
-  },
-  foo: 'func',
-  bar: 'bar-2'
-};
 
 var MemoComponent = _react['default'].memo(function (props) {
+  MemoComponent.__defaultProps = {
+    str: 'string',
+    num: 1,
+    bool: true,
+    arr: ['item-1'],
+    arrObj: [{
+      bar: 'bar-val'
+    }],
+    obj: {
+      foo: 'foo-val'
+    },
+    foo: 'func',
+    bar: 'bar-2'
+  };
   var _props$str3 = props.str,
       str = _props$str3 === void 0 ? 'string' : _props$str3,
       _props$num3 = props.num,
@@ -120,22 +133,22 @@ var MemoComponent = _react['default'].memo(function (props) {
 });
 
 exports.MemoComponent = MemoComponent;
-MemoComponent.__defaultProps = {
-  str: 'string',
-  num: 1,
-  bool: true,
-  arr: ['item-1'],
-  arrObj: [{
-    bar: 'bar-val'
-  }],
-  obj: {
-    foo: 'foo-val'
-  },
-  foo: 'func',
-  bar: 'bar-2'
-};
 
 var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
+  ForwardRefComponent.__defaultProps = {
+    str: 'string',
+    num: 1,
+    bool: true,
+    arr: ['item-1'],
+    arrObj: [{
+      bar: 'bar-val'
+    }],
+    obj: {
+      foo: 'foo-val'
+    },
+    foo: 'func',
+    bar: 'bar-2'
+  };
   var _props$str4 = props.str,
       str = _props$str4 === void 0 ? 'string' : _props$str4,
       _props$num4 = props.num,
@@ -163,22 +176,22 @@ var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
 });
 
 exports.ForwardRefComponent = ForwardRefComponent;
-ForwardRefComponent.__defaultProps = {
-  str: 'string',
-  num: 1,
-  bool: true,
-  arr: ['item-1'],
-  arrObj: [{
-    bar: 'bar-val'
-  }],
-  obj: {
-    foo: 'foo-val'
-  },
-  foo: 'func',
-  bar: 'bar-2'
-};
 
 var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (props, ref) {
+  MemoForwardRefComponent.__defaultProps = {
+    str: 'string',
+    num: 1,
+    bool: true,
+    arr: ['item-1'],
+    arrObj: [{
+      bar: 'bar-val'
+    }],
+    obj: {
+      foo: 'foo-val'
+    },
+    foo: 'func',
+    bar: 'bar-2'
+  };
   var _props$str5 = props.str,
       str = _props$str5 === void 0 ? 'string' : _props$str5,
       _props$num5 = props.num,
@@ -205,19 +218,5 @@ var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRe
   }, foo + test);
 }));
 
-exports.MemoForwardRefComponent = MemoForwardRefComponent;
-MemoForwardRefComponent.__defaultProps = {
-  str: 'string',
-  num: 1,
-  bool: true,
-  arr: ['item-1'],
-  arrObj: [{
-    bar: 'bar-val'
-  }],
-  obj: {
-    foo: 'foo-val'
-  },
-  foo: 'func',
-  bar: 'bar-2'
-};"
+exports.MemoForwardRefComponent = MemoForwardRefComponent;"
 `;

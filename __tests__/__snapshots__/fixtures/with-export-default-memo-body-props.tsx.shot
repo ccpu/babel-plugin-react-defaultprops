@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should pass fixtures transforms ./fixtures/with-export-default-memo.tsx 1`] = `
+exports[`should pass fixtures transforms ./fixtures/with-export-default-memo-body-props.tsx 1`] = `
 "\\"use strict\\";
 
 Object.defineProperty(exports, \\"__esModule\\", {
@@ -13,15 +13,15 @@ var _react = _interopRequireDefault(require('react'));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var MemoComponent = _react['default'].memo(function (props) {
+  MemoComponent.__defaultProps = {
+    foo: 'memo'
+  };
   var bar = props.bar,
       _props$foo = props.foo,
       foo = _props$foo === void 0 ? 'memo' : _props$foo;
   return _react['default'].createElement('div', null, bar + foo);
 });
 
-MemoComponent.__defaultProps = {
-  foo: 'memo'
-};
 var _default = MemoComponent;
 exports['default'] = _default;"
 `;

@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should pass fixtures transforms ./fixtures/styled-component-default-parms.ts 1`] = `
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports.Component2 = exports.Component = exports.Input = exports.ComponentWithAttrs = exports.Component3 = void 0;
+
+var _styledComponents = require('styled-components');
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(['\\\\n  margin: ', ';\\\\n  padding: ', ';\\\\n']);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(['\\\\n  color: blue;\\\\n']);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(['\\\\n    color: ', ';\\\\n  ']);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(['\\\\n  ', '\\\\n']);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(['\\\\n    color: ', ';\\\\n  ']);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(['\\\\n  ', '\\\\n']);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(['\\\\n    height: ', ';\\\\n    width: ', ';\\\\n  ']);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(['\\\\n  ', '\\\\n']);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Component = _styledComponents.styled.div(_templateObject(), function (_ref) {
+  var _ref$height = _ref.height,
+      height = _ref$height === void 0 ? '100%' : _ref$height,
+      _ref$width = _ref.width,
+      width = _ref$width === void 0 ? '100%' : _ref$width;
+  return (0, _styledComponents.css)(_templateObject2(), height, width);
+});
+
+exports.Component = Component;
+Component.__defaultProps = {
+  height: '100%',
+  width: '100%'
+};
+var Component2 = (0, _styledComponents.styled)(Component)(_templateObject3(), function (_ref2) {
+  var _ref2$color = _ref2.color,
+      color = _ref2$color === void 0 ? 'red' : _ref2$color;
+  return (0, _styledComponents.css)(_templateObject4(), color);
+});
+exports.Component2 = Component2;
+Component2.__defaultProps = {
+  color: 'red'
+};
+var Component3 = (0, _styledComponents.styled)(Component)(_templateObject5(), function (_ref3) {
+  var _ref3$color = _ref3.color2,
+      color2 = _ref3$color === void 0 ? 'red' : _ref3$color;
+  return (0, _styledComponents.css)(_templateObject6(), color2);
+});
+exports.Component3 = Component3;
+Component3.__defaultProps = {
+  color2: 'red'
+};
+
+var ComponentWithAttrs = _styledComponents.styled.div.attrs(function (_ref4) {
+  var _ref4$index = _ref4.index,
+      index = _ref4$index === void 0 ? 1 : _ref4$index;
+  return {
+    tabIndex: index
+  };
+})(_templateObject7());
+
+exports.ComponentWithAttrs = ComponentWithAttrs;
+ComponentWithAttrs.__defaultProps = {
+  index: 1
+};
+
+var Input = _styledComponents.styled.input.attrs(function (props) {
+  return {
+    size: props.size || '1em',
+    type: 'text'
+  };
+})(_templateObject8(), function (props) {
+  return props.size;
+}, function (props) {
+  return props.size;
+});
+
+exports.Input = Input;"
+`;

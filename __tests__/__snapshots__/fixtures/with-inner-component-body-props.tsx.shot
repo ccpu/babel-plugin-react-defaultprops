@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should pass fixtures transforms ./fixtures/with-inner-component.tsx 1`] = `
+exports[`should pass fixtures transforms ./fixtures/with-inner-component-body-props.tsx 1`] = `
 "\\"use strict\\";
 
 Object.defineProperty(exports, \\"__esModule\\", {
@@ -14,6 +14,10 @@ var _react = _interopRequireDefault(require('react'));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function FunctionComponent(props) {
+  FunctionComponent.__defaultProps = {
+    foo: 'variable'
+  };
+
   var InnerComponent = function InnerComponent(prop1) {
     var _prop1$bar = prop1.bar,
         bar = _prop1$bar === void 0 ? 'inner-bar' : _prop1$bar;
@@ -32,11 +36,11 @@ function FunctionComponent(props) {
   return _react['default'].createElement('div', null, bar + foo, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
 }
 
-FunctionComponent.__defaultProps = {
-  foo: 'variable'
-};
-
 var VariableComponent = function VariableComponent(props) {
+  VariableComponent.__defaultProps = {
+    foo: 'variable'
+  };
+
   var InnerComponent = function InnerComponent(prop1) {
     var _prop1$bar2 = prop1.bar,
         bar = _prop1$bar2 === void 0 ? 'inner-bar' : _prop1$bar2;
@@ -56,11 +60,12 @@ var VariableComponent = function VariableComponent(props) {
 };
 
 exports.VariableComponent = VariableComponent;
-VariableComponent.__defaultProps = {
-  foo: 'variable'
-};
 
 var MemoComponent = _react['default'].memo(function (props) {
+  MemoComponent.__defaultProps = {
+    foo: 'variable'
+  };
+
   var InnerComponent = function InnerComponent(prop1) {
     var _prop1$bar3 = prop1.bar,
         bar = _prop1$bar3 === void 0 ? 'inner-bar' : _prop1$bar3;
@@ -80,11 +85,12 @@ var MemoComponent = _react['default'].memo(function (props) {
 });
 
 exports.MemoComponent = MemoComponent;
-MemoComponent.__defaultProps = {
-  foo: 'variable'
-};
 
 var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
+  ForwardRefComponent.__defaultProps = {
+    foo: 'variable'
+  };
+
   var InnerComponent = function InnerComponent(prop1) {
     var _prop1$bar4 = prop1.bar,
         bar = _prop1$bar4 === void 0 ? 'inner-bar' : _prop1$bar4;
@@ -106,11 +112,12 @@ var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
 });
 
 exports.ForwardRefComponent = ForwardRefComponent;
-ForwardRefComponent.__defaultProps = {
-  foo: 'variable'
-};
 
 var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (props, ref) {
+  MemoForwardRefComponent.__defaultProps = {
+    foo: 'variable'
+  };
+
   var InnerComponent = function InnerComponent(prop1) {
     var _prop1$bar5 = prop1.bar,
         bar = _prop1$bar5 === void 0 ? 'inner-bar' : _prop1$bar5;
@@ -131,8 +138,5 @@ var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRe
   }, bar + foo, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
 }));
 
-exports.MemoForwardRefComponent = MemoForwardRefComponent;
-MemoForwardRefComponent.__defaultProps = {
-  foo: 'variable'
-};"
+exports.MemoForwardRefComponent = MemoForwardRefComponent;"
 `;

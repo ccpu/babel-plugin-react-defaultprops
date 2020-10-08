@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should pass fixtures transforms ./fixtures/with-mixed-body-variable.tsx 1`] = `
+exports[`should pass fixtures transforms ./fixtures/with-mixed-body-props.tsx 1`] = `
 "\\"use strict\\";
 
 Object.defineProperty(exports, \\"__esModule\\", {
@@ -14,6 +14,9 @@ var _react = _interopRequireDefault(require('react'));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function FunctionComponent(props) {
+  FunctionComponent.__defaultProps = {
+    foo: 'Mixed'
+  };
   var bar = props.bar,
       _props$foo = props.foo,
       foo = _props$foo === void 0 ? 'Mixed' : _props$foo;
@@ -27,11 +30,10 @@ function FunctionComponent(props) {
   return _react['default'].createElement('div', null, bar + foo + test + a + b);
 }
 
-FunctionComponent.__defaultProps = {
-  foo: 'Mixed'
-};
-
 var WithMixedBodyVariable = function WithMixedBodyVariable(props) {
+  WithMixedBodyVariable.__defaultProps = {
+    foo: 'Mixed'
+  };
   var bar = props.bar,
       _props$foo2 = props.foo,
       foo = _props$foo2 === void 0 ? 'Mixed' : _props$foo2;
@@ -46,11 +48,11 @@ var WithMixedBodyVariable = function WithMixedBodyVariable(props) {
 };
 
 exports.WithMixedBodyVariable = WithMixedBodyVariable;
-WithMixedBodyVariable.__defaultProps = {
-  foo: 'Mixed'
-};
 
 var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (props, ref) {
+  MemoForwardRefComponent.__defaultProps = {
+    foo: 'Mixed'
+  };
   var bar = props.bar,
       _props$foo3 = props.foo,
       foo = _props$foo3 === void 0 ? 'Mixed' : _props$foo3;
@@ -67,8 +69,5 @@ var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRe
 }));
 
 exports.MemoForwardRefComponent = MemoForwardRefComponent;
-MemoForwardRefComponent.__defaultProps = {
-  foo: 'Mixed'
-};
 WithMixedBodyVariable.displayName = 'WithMixedBodyVariable';"
 `;

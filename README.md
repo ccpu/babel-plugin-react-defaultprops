@@ -73,3 +73,22 @@ var VariableComponent = function VariableComponent(props) {
 ```
 
 For more example look into the test folder.
+
+## Typescript
+
+If using typescript ad following to the`global.d.ts` file:
+
+```ts
+declare module 'react' {
+  export interface FunctionComponent<P = unknown> {
+    __defaultProps?: Partial<P>;
+  }
+  export interface ComponentClass {
+    __defaultProps?: Partial<P>;
+  }
+  export interface ForwardRefExoticComponent {
+    __defaultProps?: Partial<P>;
+  }
+}
+export {};
+```

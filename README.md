@@ -56,12 +56,14 @@ After:
 
 ```js
 var VariableComponent = function VariableComponent(props) {
-  VariableComponent.__defaultProps = {
-    foo: 'variable',
-  };
   var bar = props.bar,
     _props$foo2 = props.foo,
     foo = _props$foo2 === void 0 ? 'variable' : _props$foo2;
+  VariableComponent.__defaultProps = {
+    foo: 'variable',
+  };
   return _react['default'].createElement('div', null, bar + foo);
 };
 ```
+
+For more example look into the test folder.

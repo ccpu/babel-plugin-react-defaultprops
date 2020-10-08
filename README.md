@@ -12,9 +12,15 @@ npm install --save-dev babel-react-defaultprops
 yarn add -D babel-react-defaultprops
 ```
 
+Add the plugin to the Babel configuration:
+
+babel.config.js
+
+```
 module.exports = {
 plugins: ['module:babel-react-defaultprops'],
 };
+```
 
 ## Example
 

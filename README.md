@@ -1,6 +1,6 @@
 # babel-react-defaultprops
 
-A babe plugin that extracts es6 default parameters and append it to the component.
+A babel plugin that extracts es6 default parameters and append it to the component property named `__defaultProps`.
 
 ## Usage
 

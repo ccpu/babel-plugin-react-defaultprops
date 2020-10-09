@@ -1,6 +1,6 @@
 {
   "name": "babel-react-defaultprops",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A plugin to extract es6 default parameters",
   "source": "src/plugin.ts",
   "main": "lib/plugin.js",
@@ -31,6 +31,7 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@babel/template": "^7.10.4",
     "@babel/types": "^7.11.5",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.5",
@@ -59,7 +60,9 @@
     "lint": "yarn eslint . --ext .ts,.tsx",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "jest:clearCache": "jest --clearCache",
+    "jest:no-cache": "jest --no-cache"
   },
   "author": "m.doaie <mdoaie@yahoo.co.uk>",
   "license": "MIT",

@@ -6,7 +6,7 @@ interface ComponentProps {
 }
 
 export function FunctionComponent(props: ComponentProps) {
-  const { foo = 'func' } = props;
+  const { foo = 'FunctionComponent' } = props;
   const { bar = 'bar-1' } = props;
   const { bar: test = 'bar-2' } = props;
 
@@ -14,7 +14,7 @@ export function FunctionComponent(props: ComponentProps) {
 }
 
 export const VariableComponent = (props: ComponentProps) => {
-  const { foo = 'func' } = props;
+  const { foo = 'VariableComponent' } = props;
   const { bar = 'bar-1' } = props;
   const { bar: test = 'bar-2' } = props;
 
@@ -22,7 +22,7 @@ export const VariableComponent = (props: ComponentProps) => {
 };
 
 export const MemoComponent: React.SFC<ComponentProps> = React.memo((props) => {
-  const { foo = 'func' } = props;
+  const { foo = 'MemoComponent' } = props;
   const { bar = 'bar-1' } = props;
   const { bar: test = 'bar-2' } = props;
 
@@ -31,7 +31,7 @@ export const MemoComponent: React.SFC<ComponentProps> = React.memo((props) => {
 
 export const ForwardRefComponent: React.SFC<ComponentProps> = React.forwardRef(
   (props, ref: React.Ref<HTMLDivElement>) => {
-    const { foo = 'func' } = props;
+    const { foo = 'ForwardRefComponent' } = props;
     const { bar = 'bar-1' } = props;
     const { bar: test = 'bar-2' } = props;
 
@@ -41,7 +41,7 @@ export const ForwardRefComponent: React.SFC<ComponentProps> = React.forwardRef(
 
 export const MemoForwardRefComponent: React.SFC<ComponentProps> = React.memo(
   React.forwardRef((props, ref: React.Ref<HTMLDivElement>) => {
-    const { foo = 'func' } = props;
+    const { foo = 'MemoForwardRefComponent' } = props;
     const { bar = 'bar-1' } = props;
     const { bar: test = 'bar-2' } = props;
 

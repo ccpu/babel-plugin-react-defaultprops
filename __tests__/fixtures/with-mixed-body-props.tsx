@@ -6,7 +6,7 @@ interface ComponentProps {
 }
 
 export function FunctionComponent(props: ComponentProps) {
-  const { bar, foo = 'Mixed' } = props;
+  const { bar, foo = 'FunctionComponent' } = props;
 
   const props2 = { a: 1, b: 2 };
 
@@ -16,7 +16,7 @@ export function FunctionComponent(props: ComponentProps) {
 }
 
 const WithMixedBodyVariable: SFC<ComponentProps> = (props) => {
-  const { bar, foo = 'Mixed' } = props;
+  const { bar, foo = 'WithMixedBodyVariable' } = props;
 
   const props2 = { a: 1, b: 2 };
 
@@ -27,7 +27,7 @@ const WithMixedBodyVariable: SFC<ComponentProps> = (props) => {
 
 export const MemoForwardRefComponent: React.SFC<ComponentProps> = React.memo(
   React.forwardRef((props, ref: React.Ref<HTMLDivElement>) => {
-    const { bar, foo = 'Mixed' } = props;
+    const { bar, foo = 'MemoForwardRefComponent' } = props;
 
     const props2 = { a: 1, b: 2 };
 

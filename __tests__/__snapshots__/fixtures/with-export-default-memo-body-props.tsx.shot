@@ -16,12 +16,12 @@ var MemoComponent = _react['default'].memo(function (props) {
   var bar = props.bar,
       _props$foo = props.foo,
       foo = _props$foo === void 0 ? 'memo' : _props$foo;
-  MemoComponent.__defaultProps = {
-    foo: 'memo'
-  };
   return _react['default'].createElement('div', null, bar + foo);
 });
 
+MemoComponent.__defaultProps = {
+  foo: 'memo'
+};
 var _default = MemoComponent;
 exports['default'] = _default;"
 `;

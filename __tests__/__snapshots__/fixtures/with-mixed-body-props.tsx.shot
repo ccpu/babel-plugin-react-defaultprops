@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 function FunctionComponent(props) {
   var bar = props.bar,
       _props$foo = props.foo,
-      foo = _props$foo === void 0 ? 'Mixed' : _props$foo;
+      foo = _props$foo === void 0 ? 'FunctionComponent' : _props$foo;
   var props2 = {
     a: 1,
     b: 2
@@ -24,16 +24,17 @@ function FunctionComponent(props) {
   var _props2$a = props2.a,
       a = _props2$a === void 0 ? 3 : _props2$a,
       b = props2.b;
-  FunctionComponent.__defaultProps = {
-    foo: 'Mixed'
-  };
   return _react['default'].createElement('div', null, bar + foo + test + a + b);
 }
+
+FunctionComponent.__defaultProps = {
+  foo: 'FunctionComponent'
+};
 
 var WithMixedBodyVariable = function WithMixedBodyVariable(props) {
   var bar = props.bar,
       _props$foo2 = props.foo,
-      foo = _props$foo2 === void 0 ? 'Mixed' : _props$foo2;
+      foo = _props$foo2 === void 0 ? 'WithMixedBodyVariable' : _props$foo2;
   var props2 = {
     a: 1,
     b: 2
@@ -41,18 +42,18 @@ var WithMixedBodyVariable = function WithMixedBodyVariable(props) {
   var _props2$a2 = props2.a,
       a = _props2$a2 === void 0 ? 3 : _props2$a2,
       b = props2.b;
-  WithMixedBodyVariable.__defaultProps = {
-    foo: 'Mixed'
-  };
   return _react['default'].createElement('div', null, bar + foo + test + a + b);
 };
 
 exports.WithMixedBodyVariable = WithMixedBodyVariable;
+WithMixedBodyVariable.__defaultProps = {
+  foo: 'WithMixedBodyVariable'
+};
 
 var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (props, ref) {
   var bar = props.bar,
       _props$foo3 = props.foo,
-      foo = _props$foo3 === void 0 ? 'Mixed' : _props$foo3;
+      foo = _props$foo3 === void 0 ? 'MemoForwardRefComponent' : _props$foo3;
   var props2 = {
     a: 1,
     b: 2
@@ -60,14 +61,14 @@ var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRe
   var _props2$a3 = props2.a,
       a = _props2$a3 === void 0 ? 3 : _props2$a3,
       b = props2.b;
-  MemoForwardRefComponent.__defaultProps = {
-    foo: 'Mixed'
-  };
   return _react['default'].createElement('div', {
     ref: ref
   }, bar + foo + test + a + b);
 }));
 
 exports.MemoForwardRefComponent = MemoForwardRefComponent;
+MemoForwardRefComponent.__defaultProps = {
+  foo: 'MemoForwardRefComponent'
+};
 WithMixedBodyVariable.displayName = 'WithMixedBodyVariable';"
 `;

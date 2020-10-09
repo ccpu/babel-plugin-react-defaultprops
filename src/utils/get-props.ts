@@ -12,7 +12,7 @@ export const getProps = (
     return getPropsFromObject(firstParam.properties);
   }
 
-  const props = getPropsFormBody(node);
+  const assignmentPatterns = getPropsFormBody(node);
 
-  return props;
+  return assignmentPatterns;
 };

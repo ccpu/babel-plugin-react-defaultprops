@@ -1,12 +1,7 @@
-import { PluginOptions, Path, PathInfo } from './typings';
+import { PluginOptions, Path } from './typings';
 import { PluginObj, PluginPass } from '@babel/core';
 import { types as t } from '@babel/core';
-import {
-  isComponent,
-  getFunctionNode,
-  getExpressionStatement,
-  getPropsAndInsert,
-} from './utils';
+import { isComponent, getFunctionNode, getPropsAndInsert } from './utils';
 
 const isValidPath = (
   path:
@@ -34,8 +29,6 @@ export default function (): PluginObj<
     visitor: {
       Program: {
         enter: (path) => {
-          const items: PathInfo[] = [];
-
           path.traverse({
             FunctionDeclaration(path) {
               const { node } = path;
@@ -80,11 +73,6 @@ export default function (): PluginObj<
 
               getPropsAndInsert(path, funcNode, componentName);
             },
-          });
-
-          items.forEach((item) => {
-            const exp = getExpressionStatement(item);
-            item.path.insertAfter(exp);
           });
         },
       },

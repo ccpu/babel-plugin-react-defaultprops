@@ -9,7 +9,6 @@ export interface PluginOptions {
 }
 
 export interface PathInfo {
-  // node: t.FunctionDeclaration | t.VariableDeclarator;
   props: t.AssignmentPattern[];
   path:
     | Path<t.FunctionDeclaration>

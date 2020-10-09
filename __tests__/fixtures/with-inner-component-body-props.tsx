@@ -16,7 +16,7 @@ export function FunctionComponent(props: ComponentProps) {
     return <div>{bar}</div>;
   }
 
-  const { bar, foo = 'variable' } = props;
+  const { bar, foo = 'FunctionComponent' } = props;
 
   return (
     <div>
@@ -38,7 +38,7 @@ export const VariableComponent = (props: ComponentProps) => {
     return <div>{bar}</div>;
   }
 
-  const { bar, foo = 'variable' } = props;
+  const { bar, foo = 'VariableComponent' } = props;
 
   return (
     <div>
@@ -60,7 +60,7 @@ export const MemoComponent: React.SFC<ComponentProps> = React.memo((props) => {
     return <div>{bar}</div>;
   }
 
-  const { bar, foo = 'variable' } = props;
+  const { bar, foo = 'MemoComponent' } = props;
 
   return (
     <div>
@@ -83,7 +83,7 @@ export const ForwardRefComponent: React.SFC<ComponentProps> = React.forwardRef(
       return <div>{bar}</div>;
     }
 
-    const { bar, foo = 'variable' } = props;
+    const { bar, foo = 'ForwardRefComponent' } = props;
 
     return (
       <div ref={ref}>
@@ -107,7 +107,7 @@ export const MemoForwardRefComponent: React.SFC<ComponentProps> = React.memo(
       return <div>{bar}</div>;
     }
 
-    const { bar, foo = 'variable' } = props;
+    const { bar, foo = 'MemoForwardRefComponent' } = props;
 
     return (
       <div ref={ref}>

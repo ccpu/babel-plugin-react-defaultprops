@@ -16,9 +16,10 @@ function FunctionComponent(props) {
   var bar = props.bar,
       _props$foo = props.foo,
       foo = _props$foo === void 0 ? 'func' : _props$foo;
-  FunctionComponent.__defaultProps = {
-    foo: 'func'
-  };
   return _react['default'].createElement('div', null, bar + foo);
-}"
+}
+
+FunctionComponent.__defaultProps = {
+  foo: 'func'
+};"
 `;

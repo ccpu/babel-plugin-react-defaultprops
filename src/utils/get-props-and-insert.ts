@@ -1,4 +1,9 @@
-import { getProps, getExpressionStatement, getPropsFormBody } from '.';
+import {
+  getProps,
+  getObjectExpression,
+  getPropsFormBody,
+  setDefaultProps,
+} from '.';
 import { types as t, NodePath } from '@babel/core';
 
 export const getPropsAndInsert = (
@@ -12,29 +17,21 @@ export const getPropsAndInsert = (
     firstParam &&
     (t.isObjectExpression(firstParam) || t.isObjectPattern(firstParam))
   ) {
-    const exp = getExpressionStatement({
+    const exp = getObjectExpression({
       componentName,
-      // node,
       path,
       props: getProps(func),
     });
-    path.insertAfter(exp);
+    setDefaultProps(path, componentName, exp);
   } else if (func.body.body) {
-    const props = getPropsFormBody(func);
+    const assignmentPatterns = getPropsFormBody(func);
 
-    const exp = getExpressionStatement({
+    const exp = getObjectExpression({
       componentName,
-      // node,
       path,
-      props: props || [],
+      props: assignmentPatterns || [],
     });
 
-    func.body.body = func.body.body.reduce((arr, node) => {
-      if (t.isReturnStatement(node)) {
-        arr.push(exp);
-      }
-      arr.push(node);
-      return arr;
-    }, []);
+    setDefaultProps(path, componentName, exp);
   }
 };

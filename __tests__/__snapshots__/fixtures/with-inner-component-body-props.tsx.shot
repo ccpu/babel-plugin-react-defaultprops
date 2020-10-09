@@ -28,12 +28,13 @@ function FunctionComponent(props) {
 
   var bar = props.bar,
       _props$foo = props.foo,
-      foo = _props$foo === void 0 ? 'variable' : _props$foo;
-  FunctionComponent.__defaultProps = {
-    foo: 'variable'
-  };
+      foo = _props$foo === void 0 ? 'FunctionComponent' : _props$foo;
   return _react['default'].createElement('div', null, bar + foo, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
 }
+
+FunctionComponent.__defaultProps = {
+  foo: 'FunctionComponent'
+};
 
 var VariableComponent = function VariableComponent(props) {
   var InnerComponent = function InnerComponent(prop1) {
@@ -50,14 +51,14 @@ var VariableComponent = function VariableComponent(props) {
 
   var bar = props.bar,
       _props$foo2 = props.foo,
-      foo = _props$foo2 === void 0 ? 'variable' : _props$foo2;
-  VariableComponent.__defaultProps = {
-    foo: 'variable'
-  };
+      foo = _props$foo2 === void 0 ? 'VariableComponent' : _props$foo2;
   return _react['default'].createElement('div', null, bar + foo, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
 };
 
 exports.VariableComponent = VariableComponent;
+VariableComponent.__defaultProps = {
+  foo: 'VariableComponent'
+};
 
 var MemoComponent = _react['default'].memo(function (props) {
   var InnerComponent = function InnerComponent(prop1) {
@@ -74,14 +75,14 @@ var MemoComponent = _react['default'].memo(function (props) {
 
   var bar = props.bar,
       _props$foo3 = props.foo,
-      foo = _props$foo3 === void 0 ? 'variable' : _props$foo3;
-  MemoComponent.__defaultProps = {
-    foo: 'variable'
-  };
+      foo = _props$foo3 === void 0 ? 'MemoComponent' : _props$foo3;
   return _react['default'].createElement('div', null, bar + foo, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
 });
 
 exports.MemoComponent = MemoComponent;
+MemoComponent.__defaultProps = {
+  foo: 'MemoComponent'
+};
 
 var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
   var InnerComponent = function InnerComponent(prop1) {
@@ -98,16 +99,16 @@ var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
 
   var bar = props.bar,
       _props$foo4 = props.foo,
-      foo = _props$foo4 === void 0 ? 'variable' : _props$foo4;
-  ForwardRefComponent.__defaultProps = {
-    foo: 'variable'
-  };
+      foo = _props$foo4 === void 0 ? 'ForwardRefComponent' : _props$foo4;
   return _react['default'].createElement('div', {
     ref: ref
   }, bar + foo, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
 });
 
 exports.ForwardRefComponent = ForwardRefComponent;
+ForwardRefComponent.__defaultProps = {
+  foo: 'ForwardRefComponent'
+};
 
 var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (props, ref) {
   var InnerComponent = function InnerComponent(prop1) {
@@ -124,14 +125,14 @@ var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRe
 
   var bar = props.bar,
       _props$foo5 = props.foo,
-      foo = _props$foo5 === void 0 ? 'variable' : _props$foo5;
-  MemoForwardRefComponent.__defaultProps = {
-    foo: 'variable'
-  };
+      foo = _props$foo5 === void 0 ? 'MemoForwardRefComponent' : _props$foo5;
   return _react['default'].createElement('div', {
     ref: ref
   }, bar + foo, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
 }));
 
-exports.MemoForwardRefComponent = MemoForwardRefComponent;"
+exports.MemoForwardRefComponent = MemoForwardRefComponent;
+MemoForwardRefComponent.__defaultProps = {
+  foo: 'MemoForwardRefComponent'
+};"
 `;

@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React from 'react';
 
 interface ComponentProps {
@@ -15,6 +17,7 @@ interface ComponentProps {
 }
 
 export function FunctionComponent(props: ComponentProps) {
+  const val = 'foo';
   const {
     str = 'string',
     num = 1,
@@ -25,12 +28,15 @@ export function FunctionComponent(props: ComponentProps) {
     foo = 'func',
     bar: test = 'bar-2',
     prop,
+    div = <div />,
+    span = <span className={val} />,
   } = props;
 
   return <div>{foo + test}</div>;
 }
 
 export const VariableComponent = (props: ComponentProps) => {
+  const val = 'foo';
   const {
     str = 'string',
     num = 1,
@@ -41,12 +47,15 @@ export const VariableComponent = (props: ComponentProps) => {
     foo = 'func',
     bar: test = 'bar-2',
     prop,
+    div = <div />,
+    span = <span className={val} />,
   } = props;
 
   return <div>{foo + test}</div>;
 };
 
 export const MemoComponent: React.SFC<ComponentProps> = React.memo((props) => {
+  const val = 'foo';
   const {
     str = 'string',
     num = 1,
@@ -57,6 +66,8 @@ export const MemoComponent: React.SFC<ComponentProps> = React.memo((props) => {
     foo = 'func',
     bar: test = 'bar-2',
     prop,
+    div = <div />,
+    span = <span className={val} />,
   } = props;
 
   return <div>{foo + test}</div>;
@@ -64,6 +75,7 @@ export const MemoComponent: React.SFC<ComponentProps> = React.memo((props) => {
 
 export const ForwardRefComponent: React.SFC<ComponentProps> = React.forwardRef(
   (props, ref: React.Ref<HTMLDivElement>) => {
+    const val = 'foo';
     const {
       str = 'string',
       num = 1,
@@ -74,6 +86,8 @@ export const ForwardRefComponent: React.SFC<ComponentProps> = React.forwardRef(
       foo = 'func',
       bar: test = 'bar-2',
       prop,
+      div = <div />,
+      span = <span className={val} />,
     } = props;
 
     return <div ref={ref}>{foo + test}</div>;
@@ -82,6 +96,7 @@ export const ForwardRefComponent: React.SFC<ComponentProps> = React.forwardRef(
 
 export const MemoForwardRefComponent: React.SFC<ComponentProps> = React.memo(
   React.forwardRef((props, ref: React.Ref<HTMLDivElement>) => {
+    const val = 'foo';
     const {
       str = 'string',
       num = 1,
@@ -92,6 +107,8 @@ export const MemoForwardRefComponent: React.SFC<ComponentProps> = React.memo(
       foo = 'func',
       bar: test = 'bar-2',
       prop,
+      div = <div />,
+      span = <span className={val} />,
     } = props;
 
     return <div ref={ref}>{foo + test}</div>;

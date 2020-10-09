@@ -65,10 +65,11 @@ var VariableComponent = function VariableComponent(props) {
   var bar = props.bar,
     _props$foo2 = props.foo,
     foo = _props$foo2 === void 0 ? 'variable' : _props$foo2;
-  VariableComponent.__defaultProps = {
-    foo: 'variable',
-  };
   return _react['default'].createElement('div', null, bar + foo);
+};
+
+VariableComponent.__defaultProps = {
+  foo: 'variable',
 };
 ```
 
@@ -86,3 +87,5 @@ declare module 'react' {
 }
 export {};
 ```
+
+> Node that the default props with the locale variable as a value in the function body will not be included.

@@ -14,35 +14,36 @@ var _react = _interopRequireDefault(require('react'));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function FunctionComponent() {
-  FunctionComponent.__defaultProps = {};
   return _react['default'].createElement(_react['default'].Fragment, null);
 }
 
+FunctionComponent.__defaultProps = {};
+
 var VariableComponent2 = function VariableComponent2() {
-  VariableComponent2.__defaultProps = {};
   return _react['default'].createElement(_react['default'].Fragment, null);
 };
 
 exports.VariableComponent2 = VariableComponent2;
+VariableComponent2.__defaultProps = {};
 
 var MemoComponent = _react['default'].memo(function () {
-  MemoComponent.__defaultProps = {};
   return _react['default'].createElement(_react['default'].Fragment, null);
 });
 
 exports.MemoComponent = MemoComponent;
+MemoComponent.__defaultProps = {};
 
 var ForwardRefComponent = _react['default'].forwardRef(function () {
-  ForwardRefComponent.__defaultProps = {};
   return _react['default'].createElement(_react['default'].Fragment, null);
 });
 
 exports.ForwardRefComponent = ForwardRefComponent;
+ForwardRefComponent.__defaultProps = {};
 
 var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function () {
-  MemoForwardRefComponent.__defaultProps = {};
   return _react['default'].createElement(_react['default'].Fragment, null);
 }));
 
-exports.MemoForwardRefComponent = MemoForwardRefComponent;"
+exports.MemoForwardRefComponent = MemoForwardRefComponent;
+MemoForwardRefComponent.__defaultProps = {};"
 `;

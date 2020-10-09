@@ -1,7 +1,9 @@
 import { types as t } from '@babel/core';
+import { isValidValue } from './is-valid-value';
 
 export const getPropsFromObject = (
   properties: (t.RestElement | t.ObjectProperty)[],
+  restricted?: boolean,
 ): t.AssignmentPattern[] => {
   const props = properties.reduce((arr, n) => {
     if (!t.isObjectProperty(n) || !t.isAssignmentPattern(n.value)) {
@@ -10,6 +12,9 @@ export const getPropsFromObject = (
 
     if (!t.isIdentifier(n.key) || !t.isIdentifier(n.value.left)) return arr;
 
+    if (restricted && !isValidValue(n.value)) {
+      return arr;
+    }
     //  const { bar = 'bar' } = props;
     if (n.key.name === n.value.left.name) {
       arr.push(n.value);

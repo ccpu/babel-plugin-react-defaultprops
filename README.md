@@ -75,6 +75,8 @@ VariableComponent.__defaultProps = {
 
 For more example look into the test folder.
 
+> Node that the default props with the locale variable as a value in the function body will not be included.
+
 ## Typescript
 
 If using typescript ad following to the`global.d.ts` file:
@@ -87,5 +89,3 @@ declare module 'react' {
 }
 export {};
 ```
-
-> Node that the default props with the locale variable as a value in the function body will not be included.

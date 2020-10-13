@@ -1,1 +1,1 @@
-export function getDefaultProps<T>(props: T): T;
+export function getDefaultProps<T>(props?: T): T;

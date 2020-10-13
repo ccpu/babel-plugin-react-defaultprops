@@ -18,7 +18,7 @@ babel.config.js
 
 ```
 module.exports = {
-plugins: ['module:babel-plugin-react-defaultprops'],
+plugins: ['babel-plugin-react-defaultprops'],
 };
 ```
 

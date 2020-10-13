@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[
+  `should pass fixtures transforms ./fixtures/getDefaultProps/with-inner-component-body-props.tsx 1`
+] = `
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports.FunctionComponent = FunctionComponent;
+exports.MemoForwardRefComponent = exports.ForwardRefComponent = exports.MemoComponent = exports.VariableComponent = void 0;
+
+var _react = _interopRequireDefault(require('react'));
+
+var _utils = require('babel-plugin-react-defaultprops/utils');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function FunctionComponent(props) {
+  var _prop = prop1,
+      _prop$bar = _prop.bar,
+      bar = _prop$bar === void 0 ? 'FunctionComponent' : _prop$bar;
+
+  var InnerComponent = function InnerComponent(prop1) {
+    var _prop1$bar = prop1.bar,
+        bar = _prop1$bar === void 0 ? 'inner-bar' : _prop1$bar;
+    var defaultProps = {};
+    return _react['default'].createElement('div', null, bar);
+  };
+
+  return _react['default'].createElement('div', null, bar, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
+}
+
+FunctionComponent.__defaultProps = {};
+
+var VariableComponent = function VariableComponent(props) {
+  var _prop2 = prop1,
+      _prop2$bar = _prop2.bar,
+      bar = _prop2$bar === void 0 ? 'VariableComponent' : _prop2$bar;
+
+  var InnerComponent = function InnerComponent(prop1) {
+    var _prop1$bar2 = prop1.bar,
+        bar = _prop1$bar2 === void 0 ? 'inner-bar' : _prop1$bar2;
+    var defaultProps = {};
+    return _react['default'].createElement('div', null, bar);
+  };
+
+  return _react['default'].createElement('div', null, bar, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
+};
+
+exports.VariableComponent = VariableComponent;
+VariableComponent.__defaultProps = {};
+
+var MemoComponent = _react['default'].memo(function (props) {
+  var _prop3 = prop1,
+      _prop3$bar = _prop3.bar,
+      bar = _prop3$bar === void 0 ? 'MemoComponent' : _prop3$bar;
+
+  var InnerComponent = function InnerComponent(prop1) {
+    var _prop1$bar3 = prop1.bar,
+        bar = _prop1$bar3 === void 0 ? 'inner-bar' : _prop1$bar3;
+    var defaultProps = {};
+    return _react['default'].createElement('div', null, bar);
+  };
+
+  return _react['default'].createElement('div', null, bar, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
+});
+
+exports.MemoComponent = MemoComponent;
+MemoComponent.__defaultProps = {};
+
+var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
+  var _prop4 = prop1,
+      _prop4$bar = _prop4.bar,
+      bar = _prop4$bar === void 0 ? 'ForwardRefComponent' : _prop4$bar;
+
+  var InnerComponent = function InnerComponent(prop1) {
+    var _prop1$bar4 = prop1.bar,
+        bar = _prop1$bar4 === void 0 ? 'inner-bar' : _prop1$bar4;
+    var defaultProps = {};
+    return _react['default'].createElement('div', null, bar);
+  };
+
+  return _react['default'].createElement('div', null, bar, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
+});
+
+exports.ForwardRefComponent = ForwardRefComponent;
+ForwardRefComponent.__defaultProps = {};
+
+var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (props, ref) {
+  var _prop5 = prop1,
+      _prop5$bar = _prop5.bar,
+      bar = _prop5$bar === void 0 ? 'MemoForwardRefComponent' : _prop5$bar;
+
+  var InnerComponent = function InnerComponent(prop1) {
+    var _prop1$bar5 = prop1.bar,
+        bar = _prop1$bar5 === void 0 ? 'inner-bar' : _prop1$bar5;
+    var defaultProps = {};
+    return _react['default'].createElement('div', null, bar);
+  };
+
+  return _react['default'].createElement('div', null, bar, _react['default'].createElement(InnerComponent, null), _react['default'].createElement(InnerComponent2, null));
+}));
+
+exports.MemoForwardRefComponent = MemoForwardRefComponent;
+MemoForwardRefComponent.__defaultProps = {};"
+`;

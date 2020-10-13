@@ -1,6 +1,6 @@
 {
-  "name": "babel-react-defaultprops",
-  "version": "1.0.3",
+  "name": "babel-plugin-react-defaultprops",
+  "version": "1.0.2",
   "description": "A plugin to extract es6 default parameters",
   "source": "src/plugin.ts",
   "main": "lib/plugin.js",
@@ -11,11 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ccpu/babel-plugin-react-defaultprops.git"
   },
   "files": [
     "lib",
-    "src"
+    "src",
+    "utils.d.ts"
   ],
   "keywords": [
     "babel",

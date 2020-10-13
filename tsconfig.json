@@ -24,7 +24,8 @@
   "include": [
     "src/**/*",
     "**/__tests__/**/*",
-    "typings/**/*"
+    "typings/**/*",
+    "utils.d.ts",
   ],
   "exclude": [
     "node_modules",

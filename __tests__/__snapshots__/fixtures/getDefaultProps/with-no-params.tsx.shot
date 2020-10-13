@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[
+  `should pass fixtures transforms ./fixtures/getDefaultProps/with-no-params.tsx 1`
+] = `
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports.FunctionComponent = FunctionComponent;
+exports.MemoForwardRefComponent = exports.ForwardRefComponent = exports.MemoComponent = exports.VariableComponent2 = void 0;
+
+var _react = _interopRequireDefault(require('react'));
+
+var _utils = require('babel-plugin-react-defaultprops/utils');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function FunctionComponent() {
+  var defaultProps = {};
+  return _react['default'].createElement(_react['default'].Fragment, null);
+}
+
+FunctionComponent.__defaultProps = {};
+
+var VariableComponent2 = function VariableComponent2() {
+  var defaultProps = {};
+  return _react['default'].createElement(_react['default'].Fragment, null);
+};
+
+exports.VariableComponent2 = VariableComponent2;
+VariableComponent2.__defaultProps = {};
+
+var MemoComponent = _react['default'].memo(function () {
+  var defaultProps = {};
+  return _react['default'].createElement(_react['default'].Fragment, null);
+});
+
+exports.MemoComponent = MemoComponent;
+MemoComponent.__defaultProps = {};
+
+var ForwardRefComponent = _react['default'].forwardRef(function () {
+  var defaultProps = {};
+  return _react['default'].createElement(_react['default'].Fragment, null);
+});
+
+exports.ForwardRefComponent = ForwardRefComponent;
+ForwardRefComponent.__defaultProps = {};
+
+var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function () {
+  var defaultProps = {};
+  return _react['default'].createElement(_react['default'].Fragment, null);
+}));
+
+exports.MemoForwardRefComponent = MemoForwardRefComponent;
+MemoForwardRefComponent.__defaultProps = {};"
+`;

@@ -1,21 +1,18 @@
-import { PluginOptions, Path } from './typings';
+import { PluginOptions } from './typings';
 import { PluginObj, PluginPass } from '@babel/core';
 import { types as t } from '@babel/core';
-import { isComponent, getFunctionNode, getPropsAndInsert } from './utils';
-
-const isValidPath = (
-  path:
-    | Path<t.FunctionDeclaration>
-    | Path<t.VariableDeclaration>
-    | Path<t.CompletionStatement>
-    | Path<t.TaggedTemplateExpression>,
-) => {
-  if (t.isExportNamedDeclaration(path.parent)) return true;
-  if (t.isExportDefaultDeclaration(path.parent)) return true;
-  if (t.isProgram(path.parent)) return true;
-
-  return false;
-};
+import {
+  isImported,
+  // getFunctionNode,
+  // getProps,
+  // isComponent,
+  setDefaultProps,
+  // isRootPath,
+  getComponentRecursively,
+} from './utils';
+import { getFunctionDeclarationProps } from './get-function-declaration-props';
+import { getVariableDeclarationProps } from './get-variable-declaration-props';
+import { getPropsFormPath } from './get-props-form-path';
 
 export default function (): PluginObj<
   PluginPass & { opts: PluginOptions & { isReactFile: boolean } }
@@ -31,13 +28,9 @@ export default function (): PluginObj<
         enter: (path) => {
           path.traverse({
             FunctionDeclaration(path) {
-              const { node } = path;
-
-              if (!isComponent(node) || !isValidPath(path)) return;
-
-              const componentName = node.id.name;
-
-              getPropsAndInsert(path, node, componentName);
+              const propInfo = getFunctionDeclarationProps(path);
+              if (!propInfo) return;
+              setDefaultProps(path, propInfo.componentName, propInfo.props);
             },
 
             // `const Foo = (props: Props) => {};`
@@ -45,33 +38,32 @@ export default function (): PluginObj<
             // `const Ref = React.forwardRef<Element, Props>();`
             // `const Memo = React.memo<Props>();`
             VariableDeclaration(path) {
-              const { node } = path;
-              if (!node.declarations || node.declarations.length === 0) {
-                return;
-              }
-
-              const declarationNode = node.declarations[0];
+              const declarationNode = path.node.declarations[0];
               const init = declarationNode.init;
 
-              if (!isComponent(declarationNode) || !isValidPath(path)) return;
-
-              if (!t.isIdentifier(declarationNode.id)) return;
-
-              const componentName = declarationNode.id.name;
-
               if (
-                !t.isArrowFunctionExpression(init) &&
-                !t.isCallExpression(init) &&
-                !t.isTaggedTemplateExpression(init)
+                t.isCallExpression(init) &&
+                t.isIdentifier(init.callee) &&
+                init.callee.name === 'getDefaultProps' &&
+                isImported(path, 'getDefaultProps')
               ) {
+                const componentPath = getComponentRecursively(path);
+                const propInfo = getPropsFormPath(componentPath);
+
+                path.replaceWith(
+                  t.variableDeclaration(path.node.kind, [
+                    t.variableDeclarator(
+                      declarationNode.id,
+                      propInfo ? propInfo.props : t.nullLiteral(),
+                    ),
+                  ]),
+                );
                 return;
               }
 
-              const funcNode = getFunctionNode(init);
-
-              if (!funcNode) return;
-
-              getPropsAndInsert(path, funcNode, componentName);
+              const propInfo = getVariableDeclarationProps(path);
+              if (!propInfo) return;
+              setDefaultProps(path, propInfo.componentName, propInfo.props);
             },
           });
         },

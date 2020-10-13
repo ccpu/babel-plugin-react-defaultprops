@@ -1,18 +1,30 @@
-import { types as t } from '@babel/core';
-import { getPropsFromObject } from './get-props-from-object';
-import { getPropsFormBody } from './get-props-form-body';
+import { getPropsFromParams, getObjectExpression, getPropsFormBody } from '.';
+import { types as t, NodePath } from '@babel/core';
 
 export const getProps = (
-  node: t.FunctionDeclaration | t.ArrowFunctionExpression,
+  path: NodePath<t.FunctionDeclaration> | NodePath<t.VariableDeclaration>,
+  func: t.FunctionDeclaration,
+  componentName: string,
 ) => {
-  if (!node.params.length) return undefined;
+  const firstParam = func.params.length && func.params[0];
 
-  const firstParam = node.params[0];
-  if (t.isObjectPattern(firstParam)) {
-    return getPropsFromObject(firstParam.properties);
+  if (
+    firstParam &&
+    (t.isObjectExpression(firstParam) || t.isObjectPattern(firstParam))
+  ) {
+    return getObjectExpression({
+      componentName,
+      path,
+      props: getPropsFromParams(func),
+    });
+  } else if (func.body.body) {
+    const assignmentPatterns = getPropsFormBody(func);
+
+    return getObjectExpression({
+      componentName,
+      path,
+      props: assignmentPatterns || [],
+    });
   }
-
-  const assignmentPatterns = getPropsFormBody(node);
-
-  return assignmentPatterns;
+  return undefined;
 };

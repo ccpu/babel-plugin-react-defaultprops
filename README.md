@@ -1,15 +1,15 @@
-# babel-react-defaultprops
+# babel-plugin-react-defaultprops
 
 A babel plugin that extracts es6 default parameters and append it to the component property named `__defaultProps`.
 
 ## Usage
 
 ```
-npm install --save-dev babel-react-defaultprops
+npm install --save-dev babel-plugin-react-defaultprops
 ```
 
 ```
-yarn add -D babel-react-defaultprops
+yarn add -D babel-plugin-react-defaultprops
 ```
 
 Add the plugin to the Babel configuration:
@@ -18,7 +18,7 @@ babel.config.js
 
 ```
 module.exports = {
-plugins: ['module:babel-react-defaultprops'],
+plugins: ['module:babel-plugin-react-defaultprops'],
 };
 ```
 
@@ -76,6 +76,40 @@ VariableComponent.__defaultProps = {
 For more example look into the test folder.
 
 > Node that the default props with the locale variable as a value in the function body will not be included.
+
+## Utils
+
+- getDefaultProps
+
+To make object form default props, works only inside the function body.
+
+```js
+import React from 'react';
+import { getDefaultProps } from 'babel-plugin-react-defaultprops/utils';
+
+export function FunctionComponent({ bar, foo = 'func' }) {
+  const defaultProps = getDefaultProps();
+  return <div>{bar + foo}</div>;
+}
+```
+
+Transform to:
+
+```js
+function FunctionComponent(_ref) {
+  var bar = _ref.bar,
+    _ref$foo = _ref.foo,
+    foo = _ref$foo === void 0 ? 'func' : _ref$foo;
+
+  var defaultProps = {
+    foo: 'func',
+  };
+
+  return _react['default'].createElement('div', null, bar + foo);
+}
+```
+
+> This function does not work in nested component inside function, works only with top level components.
 
 ## Typescript
 

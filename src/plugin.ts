@@ -48,7 +48,7 @@ export default function (): PluginObj<
                 isImported(path, 'getDefaultProps')
               ) {
                 const componentPath = getComponentRecursively(path);
-                const propInfo = getPropsFormPath(componentPath);
+                const propInfo = getPropsFormPath(componentPath, false);
 
                 path.replaceWith(
                   t.variableDeclaration(path.node.kind, [

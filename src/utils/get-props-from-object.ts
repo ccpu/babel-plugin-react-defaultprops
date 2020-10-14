@@ -3,7 +3,7 @@ import { isValidValue } from './is-valid-value';
 
 export const getPropsFromObject = (
   properties: (t.RestElement | t.ObjectProperty)[],
-  restricted?: boolean,
+  restricted = true,
 ): t.AssignmentPattern[] => {
   const props = properties.reduce((arr, n) => {
     if (!t.isObjectProperty(n) || !t.isAssignmentPattern(n.value)) {

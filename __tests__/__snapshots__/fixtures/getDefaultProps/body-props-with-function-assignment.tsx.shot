@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should pass fixtures transforms ./fixtures/getDefaultProps/body-props-with-function-assignment.tsx 1`] = `
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports.FunctionComponent = FunctionComponent;
+exports.MemoForwardRefComponent = exports.ForwardRefComponent = exports.MemoComponent = exports.VariableComponent = void 0;
+
+var _react = _interopRequireDefault(require('react'));
+
+var _utils = require('babel-plugin-react-defaultprops/utils');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function FunctionComponent(props) {
+  var getValue = function getValue() {
+    return 'FunctionComponent';
+  };
+
+  var bar = props.bar,
+      _props$foo = props.foo,
+      foo = _props$foo === void 0 ? getValue() : _props$foo;
+  var defaultProps = {
+    foo: getValue()
+  };
+  return _react['default'].createElement('div', null, bar + foo);
+}
+
+FunctionComponent.__defaultProps = {};
+
+var VariableComponent = function VariableComponent(props) {
+  var getValue = function getValue() {
+    return 'VariableComponent';
+  };
+
+  var bar = props.bar,
+      _props$foo2 = props.foo,
+      foo = _props$foo2 === void 0 ? getValue() : _props$foo2;
+  var defaultProps = {
+    foo: getValue()
+  };
+  return _react['default'].createElement('div', null, bar + foo);
+};
+
+exports.VariableComponent = VariableComponent;
+VariableComponent.__defaultProps = {};
+
+var MemoComponent = _react['default'].memo(function (props) {
+  var getValue = function getValue() {
+    return 'memo';
+  };
+
+  var bar = props.bar,
+      _props$foo3 = props.foo,
+      foo = _props$foo3 === void 0 ? getValue() : _props$foo3;
+  var defaultProps = {
+    foo: getValue()
+  };
+  return _react['default'].createElement('div', null, bar + foo);
+});
+
+exports.MemoComponent = MemoComponent;
+MemoComponent.__defaultProps = {};
+
+var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
+  var getValue = function getValue() {
+    return 'forwardRef';
+  };
+
+  var bar = props.bar,
+      _props$foo4 = props.foo,
+      foo = _props$foo4 === void 0 ? getValue() : _props$foo4;
+  var defaultProps = {
+    foo: getValue()
+  };
+  return _react['default'].createElement('div', {
+    ref: ref
+  }, bar + foo);
+});
+
+exports.ForwardRefComponent = ForwardRefComponent;
+ForwardRefComponent.__defaultProps = {};
+
+var MemoForwardRefComponent = _react['default'].memo(_react['default'].forwardRef(function (props, ref) {
+  var getValue = function getValue() {
+    return 'forwardRef-memo';
+  };
+
+  var bar = props.bar,
+      _props$foo5 = props.foo,
+      foo = _props$foo5 === void 0 ? getValue() : _props$foo5;
+  var defaultProps = {
+    foo: getValue()
+  };
+  return _react['default'].createElement('div', {
+    ref: ref
+  }, bar + foo);
+}));
+
+exports.MemoForwardRefComponent = MemoForwardRefComponent;
+MemoForwardRefComponent.__defaultProps = {};"
+`;

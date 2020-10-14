@@ -3,6 +3,7 @@ import { isComponent, getProps, isRootPath, getFunctionNode } from './utils';
 
 export const getVariableDeclarationProps = (
   path: NodePath<t.VariableDeclaration>,
+  restricted?: boolean,
 ) => {
   const { node } = path;
   if (!node.declarations || node.declarations.length === 0) {
@@ -33,6 +34,6 @@ export const getVariableDeclarationProps = (
 
   return {
     componentName,
-    props: getProps(path, funcNode, componentName),
+    props: getProps(path, funcNode, componentName, restricted),
   };
 };

@@ -3,6 +3,7 @@ import { getPropsFromObject } from './get-props-from-object';
 
 export const getPropsFormBody = (
   node: t.FunctionDeclaration | t.ArrowFunctionExpression,
+  restricted: boolean,
 ) => {
   if (!node.params.length) return undefined;
   const firstParam = node.params[0];
@@ -34,7 +35,7 @@ export const getPropsFormBody = (
 
   const assignmentPatterns = getPropsFromObject(
     variableDeclarators[0].properties,
-    true,
+    restricted,
   );
 
   return assignmentPatterns;

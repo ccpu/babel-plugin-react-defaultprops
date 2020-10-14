@@ -5,6 +5,7 @@ export const getProps = (
   path: NodePath<t.FunctionDeclaration> | NodePath<t.VariableDeclaration>,
   func: t.FunctionDeclaration,
   componentName: string,
+  restricted: boolean,
 ) => {
   const firstParam = func.params.length && func.params[0];
 
@@ -18,7 +19,7 @@ export const getProps = (
       props: getPropsFromParams(func),
     });
   } else if (func.body.body) {
-    const assignmentPatterns = getPropsFormBody(func);
+    const assignmentPatterns = getPropsFormBody(func, restricted);
 
     return getObjectExpression({
       componentName,

@@ -1,6 +1,5 @@
 import { types as t } from '@babel/core';
 import { getPropsFromObject } from './get-props-from-object';
-import { getPropsFormBody } from './get-props-form-body';
 
 export const getPropsFromParams = (
   node: t.FunctionDeclaration | t.ArrowFunctionExpression,
@@ -11,8 +10,5 @@ export const getPropsFromParams = (
   if (t.isObjectPattern(firstParam)) {
     return getPropsFromObject(firstParam.properties);
   }
-
-  const assignmentPatterns = getPropsFormBody(node);
-
-  return assignmentPatterns;
+  return undefined;
 };

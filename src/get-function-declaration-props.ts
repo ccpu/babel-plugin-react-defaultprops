@@ -3,6 +3,7 @@ import { isComponent, getProps, isRootPath } from './utils';
 
 export const getFunctionDeclarationProps = (
   path: NodePath<t.FunctionDeclaration>,
+  restricted?: boolean,
 ) => {
   const { node } = path;
 
@@ -12,6 +13,6 @@ export const getFunctionDeclarationProps = (
 
   return {
     componentName,
-    props: getProps(path, node, componentName),
+    props: getProps(path, node, componentName, restricted),
   };
 };

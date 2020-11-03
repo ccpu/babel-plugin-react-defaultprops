@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should pass fixtures transforms ./fixtures/with-conditional-body-props.tsx 1`] = `
+"\\"use strict\\";
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports.FunctionComponent = FunctionComponent;
+exports.VariableComponent = void 0;
+
+var _react = _interopRequireDefault(require('react'));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function FunctionComponent(props) {
+  var _props$bar = props.bar,
+      bar = _props$bar === void 0 ? props.bar === 'foo' ? 'bar' : 'foo' : _props$bar;
+  return _react['default'].createElement('div', null, bar);
+}
+
+FunctionComponent.__defaultProps = {};
+
+var VariableComponent = function VariableComponent(props) {
+  var _props$bar2 = props.bar,
+      bar = _props$bar2 === void 0 ? props.bar === 'foo' ? 'bar' : 'foo' : _props$bar2;
+  return _react['default'].createElement('div', null, bar);
+};
+
+exports.VariableComponent = VariableComponent;
+VariableComponent.__defaultProps = {};"
+`;

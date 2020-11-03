@@ -10,6 +10,7 @@ export const isValidValue = (node: t.Node) => {
   }
 
   if (
+    t.isConditionalExpression(node) ||
     t.isMemberExpression(node) ||
     t.isCallExpression(node) ||
     t.isIdentifier(node) ||

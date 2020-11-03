@@ -88,6 +88,11 @@ describe('isValidValue', () => {
     expect(isValidValue(getNode('{ baz: variable }'))).toBeFalsy();
   });
 
+  it('should not conditional value', () => {
+    expect(isValidValue(getNode('{baz: true?true:false }'))).toBeFalsy();
+    expect(isValidValue(getNode('{baz: tru||1 }'))).toBeFalsy();
+  });
+
   describe('jsx', () => {
     it('should allow jsx', () => {
       expect(isValidValue(getNode('<div/>'))).toBeTruthy();

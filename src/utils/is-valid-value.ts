@@ -1,6 +1,10 @@
 import { types as t } from '@babel/core';
 
 export const isValidValue = (node: t.Node) => {
+  if (t.isLiteral(node)) {
+    return true;
+  }
+
   if (t.isAssignmentPattern(node)) {
     return isValidValue(node.right);
   }
@@ -8,15 +12,6 @@ export const isValidValue = (node: t.Node) => {
   if (t.isObjectProperty(node) || t.isJSXAttribute(node)) {
     return isValidValue(node.value);
   }
-
-  if (
-    t.isConditionalExpression(node) ||
-    t.isMemberExpression(node) ||
-    t.isCallExpression(node) ||
-    t.isIdentifier(node) ||
-    t.isJSXSpreadAttribute(node)
-  )
-    return false;
 
   if (t.isJSXExpressionContainer(node)) {
     return isValidValue(node.expression);
@@ -33,6 +28,7 @@ export const isValidValue = (node: t.Node) => {
         return false;
       }
     }
+    return true;
   }
 
   if (t.isArrayExpression(node)) {
@@ -42,15 +38,17 @@ export const isValidValue = (node: t.Node) => {
         return false;
       }
     }
+    return true;
   }
 
   if (t.isObjectExpression(node)) {
     for (let i = 0; i < node.properties.length; i++) {
       const prop = node.properties[i];
       if (!isValidValue(prop)) {
-        return false;
+        return isValidValue(prop);
       }
     }
+    return true;
   }
-  return true;
+  return false;
 };

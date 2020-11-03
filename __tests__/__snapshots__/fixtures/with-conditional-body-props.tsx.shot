@@ -7,7 +7,7 @@ Object.defineProperty(exports, \\"__esModule\\", {
   value: true
 });
 exports.FunctionComponent = FunctionComponent;
-exports.VariableComponent = void 0;
+exports.ForwardRefComponent = exports.MemoComponent = exports.VariableComponent = void 0;
 
 var _react = _interopRequireDefault(require('react'));
 
@@ -15,7 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function FunctionComponent(props) {
   var _props$bar = props.bar,
-      bar = _props$bar === void 0 ? props.bar === 'foo' ? 'bar' : 'foo' : _props$bar;
+      bar = _props$bar === void 0 ? props.foo || 'bar' : _props$bar;
   return _react['default'].createElement('div', null, bar);
 }
 
@@ -28,5 +28,25 @@ var VariableComponent = function VariableComponent(props) {
 };
 
 exports.VariableComponent = VariableComponent;
-VariableComponent.__defaultProps = {};"
+VariableComponent.__defaultProps = {};
+
+var MemoComponent = _react['default'].memo(function (props) {
+  var _props$bar3 = props.bar,
+      bar = _props$bar3 === void 0 ? props.foo || 'bar' : _props$bar3;
+  return _react['default'].createElement('div', null, bar);
+});
+
+exports.MemoComponent = MemoComponent;
+MemoComponent.__defaultProps = {};
+
+var ForwardRefComponent = _react['default'].forwardRef(function (props, ref) {
+  var _props$bar4 = props.bar,
+      bar = _props$bar4 === void 0 ? props.foo || 'bar' : _props$bar4;
+  return _react['default'].createElement('div', {
+    ref: ref
+  }, bar);
+});
+
+exports.ForwardRefComponent = ForwardRefComponent;
+ForwardRefComponent.__defaultProps = {};"
 `;

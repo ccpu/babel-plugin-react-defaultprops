@@ -18,7 +18,7 @@ babel.config.js
 
 ```
 module.exports = {
-plugins: ['babel-plugin-react-defaultprops'],
+    plugins: ['babel-plugin-react-defaultprops'],
 };
 ```
 
@@ -75,13 +75,13 @@ VariableComponent.__defaultProps = {
 
 For more example look into the test folder.
 
-> Node that the default props with the locale variable as a value in the function body will not be included.
-
 ## Utils
 
 - getDefaultProps
 
 To make object form default props, works only inside the function body.
+
+> Does not work in nested component, works only with top level components.
 
 ```js
 import React from 'react';
@@ -108,8 +108,6 @@ function FunctionComponent(_ref) {
   return _react['default'].createElement('div', null, bar + foo);
 }
 ```
-
-> This function does not work in nested component inside function, works only with top level components.
 
 ## Typescript
 

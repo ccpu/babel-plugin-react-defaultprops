@@ -7,6 +7,8 @@ export const getProps = (
   componentName: string,
   restricted: boolean,
 ) => {
+  if (!func.params) return undefined;
+
   const firstParam = func.params.length && func.params[0];
 
   if (
